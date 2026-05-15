@@ -1,0 +1,474 @@
+\documentclass[12pt,a4paper]{report}
+
+% =========================
+% Packages
+% =========================
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+
+\newfontfamily\frenchfont{Times New Roman}
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{setspace}
+
+\onehalfspacing
+
+% =========================
+% Colors
+% =========================
+\definecolor{maincolor}{RGB}{51,35,77}
+
+% =========================
+% Hyperref
+% =========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=maincolor,
+    urlcolor=blue
+}
+
+% =========================
+% Header & Footer
+% =========================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Résumé des logiciels open source}
+\fancyhead[L]{2026}
+\fancyfoot[C]{\thepage}
+
+% =========================
+% Title Style
+% =========================
+\titleformat{\chapter}
+{\Huge\bfseries\color{maincolor}}
+{\thechapter}
+{1em}
+{}
+
+\titleformat{\section}
+{\Large\bfseries\color{maincolor}}
+{\thesection}
+{1em}
+{}
+
+% =========================
+% Code Style
+% =========================
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true
+}
+
+% =========================
+% Document
+% =========================
+\begin{document}
+
+% =========================
+% Cover Page
+% =========================
+\begin{titlepage}
+    \centering
+
+    \vspace*{2cm}
+
+    {\Huge\bfseries Résumé des logiciels open source \par}
+
+    \vspace{1cm}
+
+    
+
+    \vspace{2cm}
+
+    {\Large Rédigé par l’étudiante \par}
+
+    \vspace{0.5cm}
+
+    {\Huge Fatimetou Limam \par}
+
+    \vfill
+
+    {\Large Année universitaire 2026 - 2027 \par}
+
+    \vspace{1cm}
+
+\end{titlepage}
+
+% =========================
+% Table of Contents
+% =========================
+\tableofcontents
+\newpage
+
+% =========================================================
+% Chapter 1
+% =========================================================
+\chapter{Introduction aux logiciels open source}
+
+\section{Définition des logiciels open source}
+
+Les logiciels open source sont des programmes dont le code source est accessible à tous pour être lu, modifié et redistribué.  
+Ce modèle permet aux développeurs et aux utilisateurs de collaborer pour améliorer les logiciels.
+
+\section{Différence entre logiciel libre et Open Source}
+
+Il existe une différence philosophique entre le logiciel libre et l’Open Source :
+
+\begin{itemize}
+    \item Le logiciel libre met l’accent sur la liberté de l’utilisateur.
+    \item L’Open Source met l’accent sur la collaboration et le développement technique.
+\end{itemize}
+
+\section{Les libertés fondamentales}
+
+Les logiciels libres reposent sur quatre libertés fondamentales :
+
+\begin{enumerate}
+    \item La liberté d’exécuter le programme.
+    \item La liberté d’étudier et de modifier le code.
+    \item La liberté de redistribuer le logiciel.
+    \item La liberté d’améliorer le programme et de partager les améliorations.
+\end{enumerate}
+
+\section{Histoire des logiciels open source}
+
+La culture du partage de code a commencé dans les universités et les centres de recherche dans les années 1970.  
+Elle s’est développée avec le projet GNU de Richard Stallman, puis avec Linux en 1991 créé par Linus Torvalds.
+
+\section{Licences les plus connues}
+
+\begin{itemize}
+    \item GPL
+    \item MIT
+    \item Apache 2.0
+    \item LGPL
+\end{itemize}
+
+\section{Avantages de l’Open Source}
+
+\begin{itemize}
+    \item Transparence
+    \item Sécurité
+    \item Réduction des coûts
+    \item Personnalisation
+    \item Développement collaboratif
+\end{itemize}
+
+\section{Modèles économiques}
+
+Les entreprises utilisent plusieurs modèles économiques :
+
+\begin{itemize}
+    \item Open Core
+    \item SaaS
+    \item Services de support
+    \item Double licence
+\end{itemize}
+
+\section{Défis actuels}
+
+Parmi les principaux défis :
+
+\begin{itemize}
+    \item Cybersécurité
+    \item Financement durable
+    \item Gestion des communautés
+    \item Concurrence des services cloud
+\end{itemize}
+
+% =========================================================
+% Chapter 2
+% =========================================================
+\chapter{Linux et les systèmes open source}
+
+\section{Qu’est-ce qu’un système d’exploitation ?}
+
+Un système d’exploitation est un logiciel de base qui gère les ressources d’un ordinateur telles que la mémoire, les fichiers et les périphériques.
+
+\section{Le système Linux}
+
+Linux est un système d’exploitation open source créé en 1991. Il est utilisé dans les serveurs, les ordinateurs et les smartphones.
+
+\section{Architecture de Linux}
+
+Linux est composé de plusieurs couches :
+
+\begin{itemize}
+    \item Kernel
+    \item Shell
+    \item Outils GNU
+    \item Interface graphique
+    \item Applications
+\end{itemize}
+
+\section{Distributions Linux}
+
+\begin{longtable}{|p{4cm}|p{4cm}|}
+\hline
+Distribution & Utilisation \\
+\hline
+Ubuntu & Adaptée aux débutants \\
+\hline
+Debian & Stable pour les serveurs \\
+\hline
+Fedora & Pour les développeurs \\
+\hline
+Arch Linux & Pour utilisateurs avancés \\
+\hline
+Kali Linux & Pour la cybersécurité \\
+\hline
+\end{longtable}
+
+\section{Fichiers ISO}
+
+Un fichier ISO est une image complète d’un système d’exploitation permettant de créer une clé USB bootable.
+
+\section{Création d’une clé USB bootable}
+
+Outils utilisés :
+
+\begin{itemize}
+    \item Rufus
+    \item Etcher
+    \item Ventoy
+\end{itemize}
+
+\section{Installation de Linux}
+
+Étapes d’installation :
+
+\begin{enumerate}
+    \item Télécharger l’image ISO
+    \item Créer une clé USB bootable
+    \item Démarrer depuis la clé USB
+    \item Partitionner le disque
+    \item Installer le système
+\end{enumerate}
+
+\section{Gestion des paquets}
+
+\begin{longtable}{|p{4cm}|p{5cm}|}
+\hline
+Gestionnaire & Distribution \\
+\hline
+apt & Ubuntu / Debian \\
+\hline
+dnf & Fedora \\
+\hline
+pacman & Arch Linux \\
+\hline
+\end{longtable}
+
+\section{Avantages de Linux}
+
+\begin{itemize}
+    \item Gratuit
+    \item Sécurisé
+    \item Stable
+    \item Rapide
+    \item Personnalisable
+\end{itemize}
+
+% =========================================================
+% Chapter 3
+% =========================================================
+\chapter{Guide des commandes Linux}
+
+\section{Commandes de navigation}
+
+\subsection*{pwd}
+Affiche le répertoire courant.
+
+\begin{lstlisting}
+pwd
+\end{lstlisting}
+
+\subsection*{ls}
+Affiche les fichiers et dossiers.
+
+\begin{lstlisting}
+ls -lah
+\end{lstlisting}
+
+\subsection*{cd}
+Changer de répertoire.
+
+\begin{lstlisting}
+cd Documents
+\end{lstlisting}
+
+\section{Gestion des fichiers}
+
+\subsection*{mkdir}
+Créer un dossier.
+
+\begin{lstlisting}
+mkdir projet
+\end{lstlisting}
+
+\subsection*{touch}
+Créer un fichier vide.
+
+\begin{lstlisting}
+touch fichier.txt
+\end{lstlisting}
+
+\subsection*{cp}
+Copier des fichiers.
+
+\begin{lstlisting}
+cp fichier.txt sauvegarde.txt
+\end{lstlisting}
+
+\subsection*{mv}
+Déplacer ou renommer des fichiers.
+
+\begin{lstlisting}
+mv ancien.txt nouveau.txt
+\end{lstlisting}
+
+\subsection*{rm}
+Supprimer des fichiers.
+
+\begin{lstlisting}
+rm fichier.txt
+\end{lstlisting}
+
+\section{Affichage des fichiers}
+
+\subsection*{cat}
+
+\begin{lstlisting}
+cat fichier.txt
+\end{lstlisting}
+
+\subsection*{less}
+
+\begin{lstlisting}
+less fichier.txt
+\end{lstlisting}
+
+\section{Permissions}
+
+\subsection*{chmod}
+
+\begin{lstlisting}
+chmod 755 script.sh
+\end{lstlisting}
+
+\section{Processus}
+
+\subsection*{ps}
+
+\begin{lstlisting}
+ps aux
+\end{lstlisting}
+
+\subsection*{top}
+
+\begin{lstlisting}
+top
+\end{lstlisting}
+
+\subsection*{kill}
+
+\begin{lstlisting}
+kill -9 PID
+\end{lstlisting}
+
+\section{Recherche}
+
+\subsection*{find}
+
+\begin{lstlisting}
+find . -name "*.txt"
+\end{lstlisting}
+
+\subsection*{grep}
+
+\begin{lstlisting}
+grep "error" fichier.log
+\end{lstlisting}
+
+\section{Réseau}
+
+\begin{itemize}
+    \item ping
+    \item curl
+    \item wget
+    \item ssh
+    \item scp
+\end{itemize}
+
+\section{Informations système}
+
+\begin{lstlisting}
+uname -a
+df -h
+free -h
+history
+\end{lstlisting}
+
+% =========================================================
+% Conclusion
+% =========================================================
+% =========================================================
+% Chapter 4
+% =========================================================
+\chapter{LibreOffice et suite bureautique open source}
+
+LibreOffice est une suite bureautique gratuite et open source utilisée pour la création et la gestion de documents.
+
+\section{Présentation générale}
+
+LibreOffice permet de réaliser plusieurs tâches de bureautique comme :
+\begin{itemize}
+    \item la rédaction de documents,
+    \item la création de tableaux,
+    \item la réalisation de présentations,
+    \item la gestion de données.
+\end{itemize}
+
+\section{Applications principales}
+
+LibreOffice contient plusieurs outils :
+\begin{itemize}
+    \item Writer : traitement de texte,
+    \item Calc : tableur,
+    \item Impress : présentations,
+    \item Draw : dessins et schémas,
+    \item Base : bases de données,
+    \item Math : formules mathématiques.
+\end{itemize}
+
+\section{Formats utilisés}
+
+LibreOffice utilise principalement les formats OpenDocument :
+\begin{itemize}
+    \item .odt pour les documents,
+    \item .ods pour les tableaux,
+    \item .odp pour les présentations,
+    \item .odg pour les dessins.
+\end{itemize}
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+Les logiciels open source représentent une évolution majeure dans le monde de la technologie moderne, basée sur la collaboration et la transparence.  
+Linux offre un environnement puissant et stable, et ses commandes permettent un contrôle complet du système.
+
+% =========================================================
+% End
+% =========================================================
+\end{document}
